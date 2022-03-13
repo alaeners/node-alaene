@@ -1,0 +1,29 @@
+{
+  "name": "node-alaene",
+  "version": "1.0.0",
+  "description": "pos puc minas - desenv. mobile",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alaeners/node-alaene.git"
+  },
+  "keywords": [
+    "node",
+    "pos",
+    "puc",
+    "minas",
+    "desenvolvimento",
+    "mobile",
+    "alaene",
+    "rommel"
+  ],
+  "author": "Alaene Rufino de Sousa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alaeners/node-alaene/issues"
+  },
+  "homepage": "https://github.com/alaeners/node-alaene#readme"
+}
