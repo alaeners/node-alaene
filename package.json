@@ -4,6 +4,7 @@
   "description": "pos puc minas - desenv. mobile",
   "main": "index.js",
   "scripts": {
+    "start": "node alaene-index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/alaeners/node-alaene/issues"
   },
-  "homepage": "https://github.com/alaeners/node-alaene#readme"
+  "homepage": "https://github.com/alaeners/node-alaene#readme",
+  "dependencies": {
+    "create-index": "^2.6.0"
+  }
 }
