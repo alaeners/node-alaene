@@ -2,7 +2,7 @@
   "name": "node-alaene",
   "version": "1.0.0",
   "description": "pos puc minas - desenv. mobile",
-  "main": "index.js",
+  "main": "alaene-index.js",
   "scripts": {
     "start": "node alaene-index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
