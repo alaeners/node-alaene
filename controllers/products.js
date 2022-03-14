@@ -19,7 +19,7 @@ export const addProducts = (req, res) => {
 
 // Obter a lista de produtos
 export const getProducts = (req, res) => {
-    console.log(`Produtos na base: ${produtos}`);
+    console.log(`Lista de produtos cadastrados: ${produtos}`);
     res.send(produtos);
 };
 
