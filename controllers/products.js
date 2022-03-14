@@ -25,7 +25,8 @@ export const getProducts = (req, res) => {
 
 // Obter um produto específico
 export const getProdPerId = (req, res) => {
-    res.send(req.params.id)
+    const prod = produtos.find((prod) => prod.id === req.params.id);
+    res.send(prod)
 };
 
 // Alterar um produto
