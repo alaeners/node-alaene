@@ -46,14 +46,9 @@ export const addProducts = (req, res) => {
 };
 
 // Obter a lista de produtos
-export const getProducts = (req, res, next) => {
-    knex_conn.select('*')
-    .from ('produto')
-    .then (produtos => {
-        res.status(200).json(produtos);
-        console.log(`Lista de produtos cadastrados: ${produtos}`);
-        res.send(produtos);
-    });
+export const getProducts = (req, res) => {
+    console.log(`Lista de produtos cadastrados: ${produtos}`);
+    res.send(produtos);
 };
 
 // Obter um produto específico
