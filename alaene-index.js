@@ -17,4 +17,3 @@ app.listen(port, () => {
 });
 
 app.use('/products', productsRouters);
-

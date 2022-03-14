@@ -38,10 +38,12 @@ export const updateProd =  (req,res) => {
     prod.id = req.body.id;
 
     console.log(`Descrição atualizada para ${req.body.descricao}. E id atualizado para ${req.body.id}`)
+    res.send(`Descrição atualizada para ${req.body.descricao}. E id atualizado para ${req.body.id}`)
 };
 
 // Excluir um produto
 export const deleteProd = (req, res) => { 
     console.log(`Produto referente ao ${req.params.id} foi excluído.`);
-    produtos = produtos.filter((prod) => prod.id !== req.params.id);
+    res.send(`Produto referente ao ${req.params.id} foi excluído.`);
+    produtos = produtos.filter((prod) => prod.id != req.params.id);
 };
