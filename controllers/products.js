@@ -25,13 +25,14 @@ export const getProducts = (req, res) => {
 
 // Obter um produto específico
 export const getProdPerId = (req, res) => {
-    const prod = produtos.find((prod) => prod.id === req.params.id);
-    res.send(prod)
+    const prod = produtos.find((prod) => prod.id == req.params.id);
+    console.log(prod);
+    res.send(prod);
 };
 
 // Alterar um produto
 export const updateProd =  (req,res) => {
-    const prod = produtos.find((prod) => prod.id === req.params.id);
+    const prod = produtos.find((prod) => prod.id == req.params.id);
     
     prod.descricao = req.body.descricao;
     prod.id = req.body.id;
