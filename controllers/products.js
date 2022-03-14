@@ -1,10 +1,20 @@
-const produtos =  []
+
+var produtos =  []
+
+//Criando id sequencial
+export function setId() {
+    return produtos.length+1
+};
 
 // Incluir um produto
 export const addProducts = (req, res) => {   
     const prod = req.body;
-    produtos.push({...prod, id: 0});
-    console.log(`Produto ${prod.id} adicionado.`);
+    produtos.push({id: setId(), 
+                   descricao: prod.descricao, 
+                   valor: prod.valor, 
+                   marca: prod.marca});
+    console.log(`Produto ${prod.descricao} adicionado.`);
+    res.send(`Produto ${prod.descricao} adicionado com sucesso.`);
 };
 
 // Obter a lista de produtos
@@ -30,6 +40,6 @@ export const updateProd =  (req,res) => {
 
 // Excluir um produto
 export const deleteProd = (req, res) => { 
-    console.log(`Produto de id ${req.params.id} foi excluído.`);
+    console.log(`Produto referente ao ${req.params.id} foi excluído.`);
     produtos = produtos.filter((prod) => prod.id !== req.params.id);
 };
