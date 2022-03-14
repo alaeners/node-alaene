@@ -35,7 +35,6 @@ export const updateProd =  (req,res) => {
     const prod = produtos.find((prod) => prod.id == req.params.id);
     
     prod.descricao = req.body.descricao;
-    prod.id = req.body.id;
 
     console.log(`Descrição atualizada para ${req.body.descricao}. E id atualizado para ${req.body.id}`)
     res.send(`Descrição atualizada para ${req.body.descricao}. E id atualizado para ${req.body.id}`)
