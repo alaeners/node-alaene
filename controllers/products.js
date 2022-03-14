@@ -44,6 +44,6 @@ export const updateProd =  (req,res) => {
 // Excluir um produto
 export const deleteProd = (req, res) => { 
     console.log(`Produto referente ao ${req.params.id} foi excluído.`);
-    res.send(`Produto referente ao ${req.params.id} foi excluído.`);
+    res.send(`Produto referente ao id ${req.params.id} foi excluído.`);
     produtos = produtos.filter((prod) => prod.id != req.params.id);
 };
