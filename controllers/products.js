@@ -48,7 +48,7 @@ export const updateProd =  (req,res) => {
         prod.valor = req.body.valor;
         console.log(`Valor atualizado para ${req.body.valor}.`)
     }
-    res.send(`Informações atualizadas com sucesso!}`)
+    res.send("Informações atualizadas com sucesso!")
 };
 
 // Excluir um produto
