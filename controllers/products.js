@@ -33,13 +33,22 @@ export const getProdPerId = (req, res) => {
 // Alterar um produto
 export const updateProd =  (req,res) => {
     const prod = produtos.find((prod) => prod.id == req.params.id);
-    
-    prod.descricao = req.body.descricao;
-    prod.marca = req.body.marca;
-    prod.valor = req.body.valor;
 
-    console.log(`Descrição atualizada para ${req.body.descricao}. E id atualizado para ${req.body.id}`)
-    res.send(`Descrição atualizada para ${req.body.descricao}. E id atualizado para ${req.body.id}`)
+    if (req.body.descricao != undefined || req.body.descricao != "") {
+        prod.descricao = req.body.descricao;
+        console.log(`Descrição atualizada para ${req.body.descricao}.`)
+    }
+
+    if (req.body.marca != undefined || req.body.marca != "") {
+        prod.marca = req.body.marca;
+        console.log(`Marca atualizada para ${req.body.marca}.`)
+    }
+
+    if (req.body.valor != undefined || req.body.valor != "") {
+        prod.valor = req.body.valor;
+        console.log(`Valor atualizado para ${req.body.valor}.`)
+    }
+    res.send(`Informações atualizadas com sucesso!}`)
 };
 
 // Excluir um produto
