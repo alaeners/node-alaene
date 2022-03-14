@@ -16,3 +16,40 @@ O ambiente que vamos precisar é criado a partir do Visual Studio Code (VSCode).
 Nessa tarefa, vamos montar uma API simplificada no padrão RESTful com o Node.js e o Express, tendo um array simples como estrutura de dados. 
 
 Utilize o servidor criado no Exercício 1 e siga os passos descritos a seguir. Você deverá submeter, além da URL um arquivo ZIP com o código do servidor criado por você.
+
+#### Passo 1 – Criar a aplicação em Node.js para uma API Restfuul
+Monte uma API RESTful de CRUD tendo como estrutura de dados um objeto JSON, conforme apresentado no quadro 1.
+
+##### Quadro 1 – Estrutura de Dados de Produto
+```
+const lista_produtos = {
+    produtos: [
+        { id: 1, descricao: "Arroz parboilizado 5Kg", valor: 25.00, marca: "Tio João"  },
+        { id: 2, descricao: "Maionese 250gr", valor: 7.20, marca: "Helmans"  },
+        { id: 3, descricao: "Iogurte Natural 200ml", valor: 2.50, marca: "Itambé"  },
+        { id: 4, descricao: "Batata Maior Palha 300gr", valor: 15.20, marca: "Chipps"  },
+        { id: 5, descricao: "Nescau 400gr", valor: 8.00, marca: "Nestlé"  },
+    ]
+}
+```
+
+##### A API deve apresentar a seguinte estrutura
+| AÇÃO | OPERAÇÃO (CRUD) | MAPEAMENTO DA URL |
+| --- | --- | --- |
+| Incluir um produto | CREATE | *POST* / produtos / |
+| Obter a lista de produtos | RETRIEVE | *GET* / produtos |
+| Obter um produto específico | RETRIEVE | *GET* / produtos /:id |
+| Alterar um produto | UPDATE | *PUT* / produtos /:id |
+| Excluir um produto | DELETE | *DELETE* / produtos /:id |
+
+#### Passo 2
+Publique o site no ambiente do Heroku. Entregue um arquivo ZIP com o código fonte e o link para sua aplicação no Heroku.
+
+### Exercício 2 - Resultado
+| AÇÃO | URL |
+| --- | --- | 
+| Incluir um produto | https://node-alaene.herokuapp.com/products/ |
+| Obter a lista de produtos | https://node-alaene.herokuapp.com/products/ |
+| Obter um produto específico | https://node-alaene.herokuapp.com/products/4 |
+| Alterar um produto | https://node-alaene.herokuapp.com/products/4 |
+| Excluir um produto | https://node-alaene.herokuapp.com/products/4 |
