@@ -1,6 +1,17 @@
 
 var produtos =  []
 
+const knex = require('knex') ( {
+    client: 'pg',
+    connection: {
+        connectionString: 'postgres://yzetrulozfsqbf:278bc05eac9dd02d687aa3fff16cefa0fdf51378ed62ddc6d0bd7629b1b9ee00@ec2-54-158-26-89.compute-1.amazonaws.com:5432/d9nmhlab7dkumr',
+        ssl: {
+            rejectUnatorized: false
+        },
+    }
+});
+
+
 //Criando id sequencial
 export function setId() {
     return produtos.length+1
@@ -21,6 +32,8 @@ export const addProducts = (req, res) => {
 export const getProducts = (req, res) => {
     console.log(`Lista de produtos cadastrados: ${produtos}`);
     res.send(produtos);
+
+    knex.select
 };
 
 // Obter um produto específico
