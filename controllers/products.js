@@ -1,4 +1,4 @@
-
+import knex, { Knex } from 'knex';
 var produtos =  []
 
 const knex = require('knex') ( {
@@ -10,7 +10,6 @@ const knex = require('knex') ( {
         },
     }
 });
-
 
 //Criando id sequencial
 export function setId() {
@@ -32,8 +31,8 @@ export const addProducts = (req, res) => {
 export const getProducts = (req, res) => {
     console.log(`Lista de produtos cadastrados: ${produtos}`);
     res.send(produtos);
-
-    knex.select
+    knex.select().table('produto')
+    
 };
 
 // Obter um produto específico

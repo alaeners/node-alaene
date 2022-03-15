@@ -1,8 +1,10 @@
+import knex from 'knex';
 import express from 'express';
 import productsRouters from './routes/products.js';
 
-const app = express();
+dotenv.config()
 
+const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
