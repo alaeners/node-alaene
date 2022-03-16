@@ -1,11 +1,8 @@
-import dotenv from 'dotenv';
 import express from 'express';
 import ProductsRoutes from './routes/ProductsRoutes.js';
 
-dotenv.config()
-require = require("esm")(module/*, options*/)
-
 const app = express();
+
 const port = process.env.PORT || 3000;
 
 app.use(express.json());

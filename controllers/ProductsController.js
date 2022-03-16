@@ -1,32 +1,3 @@
-// import knex, { Knex } from 'knex';
-import pkg from 'knex';
-const { Knex } = pkg;
-let knex_conn = pkg;
-
-export async function connect() {
-    let conn = {
-        client: 'pg',
-        connection: {
-            connectionString: process.env.DATABASE_URL,
-            ssl: {
-                rejectUnatorized: false
-            },
-        }
-    }
-    knex_conn = knex(conn);
-    return knex_conn;
-}
-
-// export const db = require('knex') ( {
-//     client: 'pg',
-//     connection: {
-//         connectionString: process.env.DATABASE_URL,
-//         ssl: {
-//             rejectUnatorized: false
-//         },
-//     }
-// });
-
 var produtos =  []
 
 //Criando id sequencial
@@ -52,7 +23,7 @@ export const getProducts = (req, res) => {
 };
 
 // Obter um produto específico
-export const getProdPerId = (req, res, next) => {
+export const getProdPerId = (req, res) => {
     const prod = produtos.find((prod) => prod.id == req.params.id);
     console.log(prod);
     res.send(prod);
