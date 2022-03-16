@@ -1,5 +1,7 @@
 import express from 'express';
 import ProductsRoutes from './routes/ProductsRoutes.js';
+require = require("esm")(module/*, options*/);
+module.exports = require("./main.js");
 
 const app = express();
 

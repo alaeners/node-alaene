@@ -1,4 +1,20 @@
+import { config } from 'dotenv';
+import { knex } from 'knex';
+
 var produtos =  []
+
+export function openConnection() {
+    const _knex = require('knex') ( {
+    client: 'pg',
+    connection: {
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+            rejectUnatorized: false
+        },
+    }
+});
+    knex(_knex)
+}
 
 //Criando id sequencial
 export function setId() {
