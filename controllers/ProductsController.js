@@ -1,15 +1,33 @@
-import knex, { Knex } from 'knex';
-var produtos =  []
+// import knex, { Knex } from 'knex';
+import pkg from 'knex';
+const { Knex } = pkg;
+let knex_conn = pkg;
 
-const knex = require('knex') ( {
-    client: 'pg',
-    connection: {
-        connectionString: process.env.DATABASE_URL,
-        ssl: {
-            rejectUnatorized: false
-        },
+export async function connect() {
+    let conn = {
+        client: 'pg',
+        connection: {
+            connectionString: process.env.DATABASE_URL,
+            ssl: {
+                rejectUnatorized: false
+            },
+        }
     }
-});
+    knex_conn = knex(conn);
+    return knex_conn;
+}
+
+// export const db = require('knex') ( {
+//     client: 'pg',
+//     connection: {
+//         connectionString: process.env.DATABASE_URL,
+//         ssl: {
+//             rejectUnatorized: false
+//         },
+//     }
+// });
+
+var produtos =  []
 
 //Criando id sequencial
 export function setId() {
@@ -28,15 +46,18 @@ export const addProducts = (req, res) => {
 };
 
 // Obter a lista de produtos
-export const getProducts = (req, res) => {
-    console.log(`Lista de produtos cadastrados: ${produtos}`);
-    res.send(produtos);
-    knex.select().table('produto')
-    
+export const getProducts = (req, res, next) => {
+    knex_conn.select('*')
+    .from ('produto')
+    .then (produtos => {
+        res.status(200).json(produtos);
+        console.log(`Lista de produtos cadastrados: ${produtos}`);
+        res.send(produtos);
+    });
 };
 
 // Obter um produto específico
-export const getProdPerId = (req, res) => {
+export const getProdPerId = (req, res, next) => {
     const prod = produtos.find((prod) => prod.id == req.params.id);
     console.log(prod);
     res.send(prod);

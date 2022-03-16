@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "pos puc minas - desenv. mobile",
   "main": "alaene-index.js",
+  "module": "main.js",
   "type": "module",
   "scripts": {
     "start": "node alaene-index"
@@ -29,6 +30,7 @@
   "homepage": "https://github.com/alaeners/node-alaene#readme",
   "dependencies": {
     "dotenv": "^16.0.0",
+    "esm": "^3.2.25",
     "express": "^4.17.3",
     "knex": "^1.0.4",
     "pg": "^8.7.3"

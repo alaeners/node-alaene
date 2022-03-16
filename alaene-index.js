@@ -1,8 +1,9 @@
-import knex from 'knex';
+import dotenv from 'dotenv';
 import express from 'express';
-import productsRouters from './routes/products.js';
+import ProductsRoutes from './routes/ProductsRoutes.js';
 
 dotenv.config()
+require = require("esm")(module/*, options*/)
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -18,4 +19,4 @@ app.listen(port, () => {
   console.info(`Server running at http://localhost:${port}`);
 });
 
-app.use('/products', productsRouters);
+app.use('/products', ProductsRoutes);
