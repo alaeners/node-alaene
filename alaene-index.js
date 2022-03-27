@@ -1,7 +1,9 @@
-import express from 'express';
-import ProductsRoutes from './routes/ProductsRoutes.js';
-require = require("esm")(module/*, options*/);
-module.exports = require("./main.js");
+require('dotenv').config();
+const express = require('express') ;
+const ProductsRoutes = require('./routes/ProductsRoutes') ;
+const routerSec = require('./routes/routerSec') ;
+//require = require("esm")(module/*, options*/);
+//module.exports = require("./main.js");
 
 const app = express();
 
@@ -19,3 +21,4 @@ app.listen(port, () => {
 });
 
 app.use('/products', ProductsRoutes);
+app.use('/seguranca', routerSec);
