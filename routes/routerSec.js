@@ -2,6 +2,9 @@ const express = require('express')
 const routerSec = express.Router()
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+const cors = require('cors');
+
+routerSec.use(cors());
 
 const knex = require('knex')({
     client: 'pg',
